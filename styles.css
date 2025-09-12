@@ -8,6 +8,18 @@ body {
     font-family: "Spooky", cursive;
 }
 
+@keyframes pulse {
+    0% {
+        text-shadow: 0 0 5px rgb(204,20,20), 0 0 10px rgb(96, 3, 3);
+    }
+    50% {
+        text-shadow: 0 0 20px rgb(204,20,20), 0 0 40px rgb(96, 3, 3);
+    }
+    100% {
+        text-shadow: 0 0 5px rgb(204,20,20), 0 0 40px rgb(96, 3, 3);
+    }
+}
+
 h1 {
     color: rgb(204,20,20);
     font-family: 'Spooky', cursive;
