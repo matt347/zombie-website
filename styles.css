@@ -20,6 +20,11 @@ body {
     }
 }
 
+.fade-out {
+    opacity: 0;
+    transition: opacity 1s ease;
+}
+
 h1 {
     color: rgb(204,20,20);
     font-family: 'Spooky', cursive;
@@ -31,6 +36,23 @@ p {
     font-family: 'Spooky', cursive;
     text-align: center;
     font-size: 27px;
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.row .left{
+    color: rgb(243, 234, 234);
+    position: absolute;
+    left: 50px;
+    margin: 0;
+    z-index: 9999;
+}
+.row .center{
+    margin: 0;
+    text-align: center;
 }
 
 .creator_button {

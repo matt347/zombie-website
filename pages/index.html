@@ -1,7 +1,7 @@
 
 
 <!-- this link is how the file is compiled (copy the 'file' part as well): 
-file:///C:/Users/matts/OneDrive/Matthew/uml/2025_Fall/Internet&Websites/Project1/zombie-website/index.html
+file:///C:/Users/matts/OneDrive/Matthew/uml/2025_Fall/Internet&Websites/Project1/zombie-website/pages/index.html
  -->
 
  <!-- <h1 style="font-size: 40px;"> -->
@@ -14,14 +14,19 @@ file:///C:/Users/matts/OneDrive/Matthew/uml/2025_Fall/Internet&Websites/Project1
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet" href="../styles.css">
+        <script src="../blood.js" defer></script>
         <title>Friend No More</title>
     </head>
     <body style="background: linear-gradient(to right, rgb(243, 234, 234), rgb(197, 190, 190));">
         <h1 style="animation: pulse 2s infinite">Friend No More</h1>
-        <p><em><strong>Survive onslaughts of gruesome zombies to uncover who you can and<br>
-            can't trust in this action-packed multiplayer adventure extravaganza!</strong></em></p>
+        <div class="row">
+            <p class = "left">Hello</p>
+            <p class = "center"><em><strong>Survive onslaughts of gruesome zombies to uncover who you can and<br>
+                can't trust in this action-packed multiplayer adventure extravaganza!</strong></em></p>
+        </div>
         <a href="about.html" class="creator_button" style="margin-top: 50px">Creator Information</a>
         <a href="contact.html" class="contact_button" style="margin-top: 20px">Contact Details</a>
+        <button id="bloodBtn" class="creator_button" style="margin-top: 50px" onclick="toggleBlood()">Start Blood Effect</button>
     </body>
 </html>
