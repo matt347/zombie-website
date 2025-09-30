@@ -1,1 +1,1 @@
-https://matt347.github.io/zombie-website/index.html
+https://matt347.github.io/zombie-website/pages/index.html
