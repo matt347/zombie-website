@@ -9,6 +9,10 @@ Object.assign(canvas.style, {
 });
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
+window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+});
 document.body.appendChild(canvas);
 
 let paintBlood = false;
@@ -18,11 +22,11 @@ window.addEventListener("mousemove", (e) => {
     if (paintBlood) {
         paintBlood = false;
         const img = document.createElement("img");
-        img.src = "../blood_img.png";
+        img.src = "../images/blood_img.png";
         const size = getRandomInt(75, 163);
-        img.style.left = `${e.pageX - (size/2)}px`;
-        img.style.top = `${e.pageY - (size/2)}px`;
-        img.style.position = "absolute";
+        img.style.left = `${(e.pageX - window.scrollX) - (size/2)}px`;
+        img.style.top = `${(e.pageY - window.scrollY) - (size/2)}px`;
+        img.style.position = "fixed";
         img.style.pointerEvents = "none";
         img.style.userSelect = "none";
         img.style.width = size + "px";
@@ -59,10 +63,22 @@ function wait_blood() {
 }
 function toggleBlood() {
     paintBlood = !paintBlood;
+    const tBtn = document.getElementById("bloodBtn");
+    const bBtn = document.getElementById("bloodBtnBottom");
     if (paintBlood) {
-        document.getElementById("bloodBtn").textContent = "Stop Blood Effect";
+        tBtn.textContent = "Stop Blood Effect";
+        bBtn.textContent = "Stop Blood Effect";
+        tBtn.setAttribute("aria-pressed", "true")
+        bBtn.setAttribute("aria-pressed", "true")
+        tBtn.setAttribute("aria-label", "Stop Blood Effect")
+        bBtn.setAttribute("aria-label", "Stop Blood Effect")
     }
     else {
-        document.getElementById("bloodBtn").textContent = "Start Blood Effect";
+        tBtn.textContent = "Start Blood Effect";
+        bBtn.textContent = "Start Blood Effect";
+        tBtn.setAttribute("aria-pressed", "false")
+        bBtn.setAttribute("aria-pressed", "false")
+        tBtn.setAttribute("aria-label", "Start Blood Effect")
+        bBtn.setAttribute("aria-label", "Start Blood Effect")
     }
 }
